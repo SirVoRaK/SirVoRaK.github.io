@@ -432,7 +432,7 @@ div.content.chess iframe{
     }
 }
 
-div.content.chess div.inner, div.content.snake div.inner, div.content.tictactoe div.inner, div.content.calc div.inner, div.content.player div.inner, div.content.about div.inner, div.content.skills div.inner{
+div.content.chess div.inner, div.content.snake div.inner, div.content.tictactoe div.inner, div.content.calc div.inner, div.content.player div.inner, div.content.about div.inner, div.content.skills div.inner, div.content.css div.inner{
     opacity: 0;
 }
 
@@ -447,12 +447,18 @@ div.content.titles{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.5);
     padding: 50px 0;
     background-color: var(--bg-alt);
-    color: var(--font-alt);
+    color: var(--accent-color-yellow);
     z-index: 2;
+}
+
+div.content.titles:not(.sub) h1::after{
+    background-color: var(--accent-color-yellow)!important;
 }
 
 div.content.titles.sub{
     z-index: 1;
+    color: var(--font-alt);
+
 }
 
 div.content.titles h1{
@@ -744,4 +750,131 @@ a.aabout:hover::after{
 
 a.aabout ion-icon{
     font-size: 50px;
+}
+
+.content.css > .inner{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+    gap: 50px;
+}
+
+@media(max-width: 1530px){
+    .content.css > .inner{
+        flex-direction: column;
+    }
+}
+
+.content.css > .inner img{
+    width: 500px;
+}
+
+.content.css > .inner > a{
+    width: 100%;
+    height: 600px;
+    max-width: 475px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 5px rgba(0,0,0,0.5);
+}
+
+.content.css > .inner > a::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(imgs/cube.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.content.css > .inner > a.amenu::after{
+    background-image: url(imgs/menu.gif);
+    background-position: top left;
+}
+
+.content.css > .inner > a.aripple::after{
+    background-image: url(imgs/ripple.gif);
+}
+
+.content.css > .inner > a:not(.atry):hover::after{
+    transform: scale(1.2);
+}
+
+.info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: hsla(0,0%,0%,40%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.info div.inner_info{
+    position: absolute;
+    bottom: 100px;
+    left: 5px;
+    right: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.content.css > .inner > a:hover .inner_info{
+    transform: translateY(0);
+}
+
+.content.css > .inner > a:hover .info{
+    opacity: 1;
+}
+
+/* .info div.inner_info > button{ */
+    /* margin-top: 30px; */
+    /* font-size: 2rem; */
+    /* padding: 10px 30px; */
+    /* cursor: pointer; */
+    /* background-color: var(--accent-color-yellow); */
+    /* color: black; */
+    /* border: 0; */
+    /* border-radius: 10px; */
+    /* text-decoration: none; */
+/* } */
+
+
+.content.css{
+    padding-bottom: 150px;
+}
+
+.end{
+    background-color: #000!important;
+    height: 125vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -100px 200px 50px hsla(0,0%,0%,100%)!important;
+}
+
+.end hr{
+    width: 90%;
+    height: 5px;
+    background-color: var(--accent-color-yellow);
+    border: 0;
+}
+
+.end h2{
+    margin: 0 25px;
+    text-align: center;
 }
