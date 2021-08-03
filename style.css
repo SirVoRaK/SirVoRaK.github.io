@@ -450,7 +450,9 @@ div.content.chess iframe{
     }
 }
 
-div.content.chess div.inner, div.content.snake div.inner, div.content.tictactoe div.inner, div.content.calc div.inner, div.content.player div.inner, div.content.about div.inner, div.content.skills div.inner, div.content.css div.inner{
+div.content.chess div.inner, div.content.snake div.inner, div.content.tictactoe div.inner, 
+div.content.calc div.inner, div.content.player div.inner, div.content.about div.inner, 
+div.content.skills div.inner, div.content.css div.inner, div.content.dino div.inner{
     opacity: 0;
 }
 

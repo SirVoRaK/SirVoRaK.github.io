@@ -150,6 +150,16 @@ const observer8 = new IntersectionObserver(entries => {
 observer8.observe(document.querySelector('.content.css .inner a'))
 
 
+const observer9 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            document.querySelector('.content.dino .inner').style.animation = "floatfromright 2s ease forwards"
+        }
+    })
+})
+observer9.observe(document.querySelector('.content.dino .inner p'))
+
+
 function appHeight() {
     document.documentElement.style.setProperty('--vh', (window.innerHeight*.01) + 'px')
 }
