@@ -4,6 +4,10 @@ let menu = document.querySelector(".menu")
 let menuChilds = document.querySelectorAll(".menu nav ul li a")
 let delay = 4500
 const container = document.querySelector("div.container")
+const endText = document.querySelector('.end-inner')
+const endContainer = document.querySelector('.content.end')
+let minTop = 0
+
 let stop = false
 console.log("started")
 
@@ -13,7 +17,14 @@ if(autoStart){
 
 setTimeout(function(){
     container.style.display = "flex"
+    minTop = endContainer.offsetTop
+    endText.style = `top: ${minTop}px`
 }, delay)
+
+document.addEventListener('scroll', () => {
+    let position = document.documentElement.clientHeight / 4 * 3
+    endText.style.top = `${clamp(window.pageYOffset + position,minTop,document.body.offsetHeight + 1000)}px`
+})
 
 toggleMenu.onclick = function(){
     menu.classList.toggle("show")
@@ -28,23 +39,17 @@ for(let i = 0; i < menuChilds.length; i++){
 document.onscroll = () => {
     let y = window.pageYOffset
     updateProgressBar()
-    /* console.log(y) */
     if(y < 70){
         document.querySelector("a.top").style = ""
     }else{
         document.querySelector("a.top").style.display = "block"
     }
+
     
-    
-    
-    /* if(y > 200){
-        document.querySelector("div.content.chess div.inner").style.animation = "floatfromright 2s ease forwards"
-    }if(y > 1190){
-        document.querySelector("div.content.snake div.inner").style.animation = "floatfromright 2s ease forwards"
-    }if(y > 2250){
-        document.querySelector("div.content.tictactoe div.inner").style.animation = "floatfromright 2s ease forwards"
-        stop = true
-    } */
+}
+
+function clamp(value, min, max){
+    return Math.max(min, Math.min(max, value))
 }
 
 function updateProgressBar(){
