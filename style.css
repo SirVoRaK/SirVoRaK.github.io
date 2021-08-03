@@ -383,6 +383,24 @@ iframe{
     background-color: rgb(160, 160, 160);
 }
 
+iframe.iframe-dino{
+    width: 901px;
+    height: 400px;
+}
+
+.content.dino a.github-link{
+    display: none;
+}
+
+@media (max-width: 910px){
+    iframe.iframe-dino{
+        display: none;
+    }
+    .content.dino a.github-link{
+        display: block;
+    }
+}
+
 div.content.chess iframe{
     width: 1250px;
     height: 850px;
@@ -764,6 +782,15 @@ a.aabout ion-icon{
     .content.css > .inner{
         flex-direction: column;
     }
+    .content.css > .inner > a .inner_info{
+        transform: translateY(0);
+    }
+    
+    .content.css > .inner > a .info{
+        opacity: 1;
+        background-color: hsla(0,0%,0%,20%);
+        backdrop-filter: blur(0px);
+    }
 }
 
 .content.css > .inner img{
@@ -814,6 +841,7 @@ a.aabout ion-icon{
     top: 0;
     right: 0;
     background-color: hsla(0,0%,0%,40%);
+    backdrop-filter: blur(2.5px);
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
