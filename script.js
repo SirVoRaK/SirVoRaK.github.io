@@ -19,6 +19,7 @@ setTimeout(function(){
     container.style.display = "flex"
     minTop = endContainer.offsetTop
     endText.style = `top: ${minTop}px`
+    endText.style.display = 'flex'
 }, delay)
 
 document.addEventListener('scroll', () => {

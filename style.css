@@ -899,7 +899,7 @@ a.aabout ion-icon{
 
 .end .end-inner{
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
