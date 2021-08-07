@@ -19,6 +19,9 @@ setTimeout(function(){
     container.style.display = "flex"
     minTop = endContainer.offsetTop
     endText.style = `top: ${minTop}px`
+
+    let position = document.documentElement.clientHeight / 4 * 3
+    endText.style.top = `${clamp(window.pageYOffset + position,minTop,document.body.offsetHeight + 1000)}px`
     endText.style.display = 'flex'
 }, delay)
 
