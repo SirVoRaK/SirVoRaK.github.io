@@ -19,11 +19,14 @@ setTimeout(function(){
     container.style.display = "flex"
 
 
-    let position = document.documentElement.clientHeight / 4 * 3
-    minTop = endContainer.offsetTop
-    endText.style = `top: ${minTop}px`
-    endText.style.top = `${clamp(window.pageYOffset + position,minTop,document.body.offsetHeight + 1000)}px`
-    endText.style.display = 'flex'
+    setTimeout(function(){
+        let position = document.documentElement.clientHeight / 4 * 3
+        minTop = endContainer.offsetTop
+        endText.style = `top: ${minTop}px`
+        endText.style.top = `${clamp(window.pageYOffset + position,minTop,document.body.offsetHeight + 1000)}px`
+        endText.style.display = 'flex'
+    },500)
+
 }, delay)
 
 document.addEventListener('scroll', () => {
