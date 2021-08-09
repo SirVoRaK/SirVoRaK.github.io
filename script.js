@@ -1,3 +1,6 @@
+window.location.href="https://sirvorak.github.io"
+
+
 let autoStart = true
 let toggleMenu = document.querySelector(".open")
 let menu = document.querySelector(".menu")
