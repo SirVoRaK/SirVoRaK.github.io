@@ -31,6 +31,7 @@ setTimeout(function(){
 
 document.addEventListener('scroll', () => {
     let position = document.documentElement.clientHeight / 4 * 3
+    minTop = endContainer.offsetTop
     endText.style.top = `${clamp(window.pageYOffset + position,minTop,document.body.offsetHeight + 1000)}px`
 })
 
@@ -71,6 +72,9 @@ updateProgressBar()
 window.onresize = () => {
     showImgs()
     appHeight()
+    let position = document.documentElement.clientHeight / 4 * 3
+    minTop = endContainer.offsetTop
+    endText.style.top = `${clamp(window.pageYOffset + position,minTop,document.body.offsetHeight + 1000)}px`
 }
 
 showImgs()

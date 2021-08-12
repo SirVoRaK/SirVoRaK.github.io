@@ -20,7 +20,8 @@
     --accent-color-light: #5B4CB3;
     --accent-color-gradient: linear-gradient(to bottom right, #6054B8, #5A4CB5);
     --accent-color-gradient-light: linear-gradient(to bottom right, #6A5ADA, #6355C6);
-    --accent-color-yellow: #FED95D;
+    --accent-color-yellow: hsl(46, 99%, 68%);
+    --accent-color-yellow-alt: hsl(46, 99%, 60%);
 }
 
 /* width */
@@ -55,6 +56,7 @@
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: rgb(160, 160, 160) rgba(70,70,70);
+    scroll-padding: 60px;
 }
 
 *:not(div.text *){
@@ -100,16 +102,24 @@ a{
     color: var(--accent-color-yellow);
 }
 
+a.underline{
+    background-image: linear-gradient(to right,var(--accent-color-yellow), var(--accent-color-yellow-alt));
+    background-size: 0% 3px;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    transition: background-size 200ms ease-in-out;
+}
+
+a.underline:hover{
+    background-size: 100% 3px;
+}
+
 .black a{
     color: white;
 }
 
 .link{
     color: rgb(0, 0, 167);
-}
-
-.underline{
-    text-decoration: underline;
 }
 
 div.welcome{
@@ -140,13 +150,13 @@ div.welcome div.text{
     font-size: 40px;
 }
 
-@media (max-width: 800px){
+@media (max-width: 820px){
     div.welcome div.text{
         font-size: 30px;
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 620px){
     div.welcome div.text{
         font-size: 20px;
     }
@@ -155,7 +165,7 @@ div.welcome div.text{
     }
 }
 
-@media (max-width: 400px){
+@media (max-width: 420px){
     div.welcome div.text{
         font-size: 12px;
     }
@@ -164,7 +174,7 @@ div.welcome div.text{
     }
 }
 
-@media (max-width: 250px){
+@media (max-width: 270px){
     div.welcome div.text{
         font-size: 9px;
     }
@@ -319,7 +329,7 @@ div.welcome div.text h2{
 div.container{
     width: 100%;
     height: fit-content;
-    display: none;
+    display: flex;
     flex-direction: column;
 }
 
@@ -649,7 +659,15 @@ div.menu.show{
     gap: 3px;
 }
 
+.menu ion-icon{
+    color: white;
+}
+
 .menu nav ul li a:hover{
+    color: var(--accent-color-yellow);
+}
+
+.menu nav ul li a:hover ion-icon{
     color: var(--accent-color-yellow);
 }
 
@@ -676,6 +694,8 @@ ion-icon{
     font-size: 30px;
     color: var(--accent-color-yellow);
 }
+
+
 
 #csharpsvg path#svg_2{
     stroke: var(--accent-color-yellow);
@@ -774,15 +794,16 @@ a.aabout ion-icon{
 
 .content.css > .inner{
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 50px 0px;
     gap: 50px;
 }
 
-@media(max-width: 1530px){
+@media(max-width: 1000px){
     .content.css > .inner{
-        flex-direction: column;
+        /*flex-direction: column; /* */
     }
     .content.css > .inner > a .inner_info{
         transform: translateY(0);
@@ -800,9 +821,9 @@ a.aabout ion-icon{
 }
 
 .content.css > .inner > a{
-    width: 100%;
+    width: 95%;
     height: 600px;
-    max-width: 475px;
+    max-width: 450px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
