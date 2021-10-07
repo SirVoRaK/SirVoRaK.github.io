@@ -176,6 +176,24 @@ const observer9 = new IntersectionObserver(entries => {
 })
 observer9.observe(document.querySelector('.content.dino .inner p'))
 
+const observer10 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            document.querySelector('.content.path .inner').style.animation = "floatfromright 2s ease forwards"
+        }
+    })
+})
+observer10.observe(document.querySelector('.content.path .inner p'))
+
+const observer11 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            document.querySelector('.content.sort .inner').style.animation = "floatfromright 2s ease forwards"
+        }
+    })
+})
+observer11.observe(document.querySelector('.content.sort .inner p'))
+
 
 function appHeight() {
     document.documentElement.style.setProperty('--vh', (window.innerHeight*.01) + 'px')

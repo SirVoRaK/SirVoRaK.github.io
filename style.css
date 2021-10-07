@@ -414,9 +414,33 @@ iframe.iframe-dino{
 div.content.chess iframe{
     width: 1250px;
     height: 850px;
-    /* transform: scale(0.85); */
-    /* margin: -50px 0; */
 }
+div.content.path iframe{
+    width: 90%;
+    max-width: 1250px;
+    height: 920px;
+}
+
+div.content.sort iframe{
+    width: 90%;
+    max-width: 1300px;
+    height: 930px;
+}
+
+
+div.content.path img, div.content.sort img{
+    display: none;
+}
+
+@media (max-width: 700px){
+    div.content.path iframe, div.content.sort iframe{
+        display: none;
+    }
+    div.content.path img, div.content.sort img{
+        display: block;
+    }
+}
+
 
 @media (max-height: 860px){
     div.content.chess iframe{
@@ -462,7 +486,8 @@ div.content.chess iframe{
 
 div.content.chess div.inner, div.content.snake div.inner, div.content.tictactoe div.inner, 
 div.content.calc div.inner, div.content.player div.inner, div.content.about div.inner, 
-div.content.skills div.inner, div.content.css div.inner, div.content.dino div.inner{
+div.content.skills div.inner, div.content.css div.inner, div.content.dino div.inner, 
+div.content.path div.inner, div.content.sort div.inner{
     opacity: 0;
 }
 
@@ -613,7 +638,7 @@ div.open{
     cursor: pointer;
     color: white;
     background-color: var(--bg-alt);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(1px);
     z-index: 2;
     box-shadow: 0 0 20px 2px rgba(0,0,0,0.5);
     border-radius: 50%;
